@@ -2,10 +2,12 @@ import React from "react";
 
 // Components
 import BookTable from "./BookTable";
+import AddBookModal from "./AddBookModal";
 
 // Stores
 import authorStore from "./stores/authorStore";
 import bookStore from "./stores/bookStore";
+import { observer } from "mobx-react";
 
 const AuthorDetail = props => {
   const authorID = props.match.params.authorID;
@@ -25,8 +27,9 @@ const AuthorDetail = props => {
         />
       </div>
       <BookTable books={books} />
+      <AddBookModal author={author} />
     </div>
   );
 };
 
-export default AuthorDetail;
+export default observer(AuthorDetail);

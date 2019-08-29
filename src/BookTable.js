@@ -1,5 +1,5 @@
 import React from "react";
-
+import { observer } from "mobx-react";
 import BookRow from "./BookRow";
 
 const BookTable = props => {
@@ -21,4 +21,4 @@ const BookTable = props => {
   );
 };
 
-export default BookTable;
+export default observer(BookTable);
